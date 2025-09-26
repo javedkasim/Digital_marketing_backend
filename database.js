@@ -1,0 +1,14 @@
+const mongoose = require("mongoose");
+
+const databaseConnection = async () => {
+    mongoose
+    .connect("mongodb://localhost:27017/digitalstore")
+    .then(()=> {
+        console.log("Database connected successfully !");
+    })
+    .catch((err) => {
+        console.log("Database connection failed", err);
+    });
+};
+
+module.exports = databaseConnection;
